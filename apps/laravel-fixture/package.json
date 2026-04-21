@@ -1,0 +1,11 @@
+{
+  "name": "@hybrid/laravel-fixture",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "build": "echo \"laravel-fixture: nothing to build\"",
+    "typecheck": "echo \"laravel-fixture: use PHPUnit / PHPStan in packages/laravel-hybrid-updater\"",
+    "lint": "echo \"laravel-fixture: use Pint in host app if configured\"",
+    "test": "php vendor/bin/phpunit"
+  }
+}

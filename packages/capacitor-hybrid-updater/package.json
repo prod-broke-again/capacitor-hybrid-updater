@@ -1,0 +1,30 @@
+{
+  "name": "@hybrid/capacitor-hybrid-updater",
+  "version": "0.1.0",
+  "description": "Android-first Capacitor updater with Laravel and GitHub providers",
+  "main": "dist/plugin.cjs.js",
+  "module": "dist/plugin.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "android/src/main/",
+    "dist/",
+    "CapacitorHybridUpdater.podspec"
+  ],
+  "capacitor": {
+    "android": {
+      "src": "android"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo \"lint: not configured\"",
+    "test": "echo \"test: not configured\""
+  },
+  "dependencies": {
+    "@capacitor/core": "^8.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

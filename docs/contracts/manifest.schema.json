@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/hybrid-updater-manifest.schema.json",
+  "title": "HybridUpdaterManifest",
+  "type": "object",
+  "required": [
+    "version",
+    "releaseDate",
+    "channel",
+    "updateType",
+    "artifacts"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "channel": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updateType": {
+      "type": "string",
+      "enum": [
+        "ota_web_only",
+        "apk_required",
+        "apk_or_ota"
+      ]
+    },
+    "minNativeVersion": {
+      "type": "string",
+      "default": "0.0.0"
+    },
+    "minNativeBuild": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "url",
+          "checksum"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "apk",
+              "web_bundle",
+              "manifest"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "checksum": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

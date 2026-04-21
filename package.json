@@ -1,0 +1,15 @@
+{
+  "name": "capacitor-hybrid-updater",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "npm run --workspaces typecheck",
+    "build": "npm run --workspaces build",
+    "lint": "npm run --workspaces lint",
+    "test": "npm run --workspaces test"
+  }
+}
